@@ -6,6 +6,9 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig(() => {
   return {
     plugins: [qwikCity(), qwikVite(), tsconfigPaths()],
+    ssr: {
+      external: ["@vercel/postgres"]
+    },
     preview: {
       headers: {
         'Cache-Control': 'public, max-age=600',
